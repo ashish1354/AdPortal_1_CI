@@ -1,0 +1,23 @@
+select id,head,status,cost,ad_date from ad ORDER BY RAND() LIMIT 5;
+
+SELECT a.id adID,a.contact contact,a.status status,a.cost cost, s.name S_Name,s.id S_ID,c.name C_Name ,c.id C_id  FROM ad a,sub_category s,category c WHERE a.sid=s.id AND s.cid=c.id AND a.status='1' GROUP BY `S_ID` ORDER BY `C_id`;
+
+SELECT a.id adID,a.contact contact,a.status status,a.cost cost, s.name S_Name,s.id S_ID,c.name C_Name ,c.id C_id  FROM ad a 
+RIGHT JOIN sub_category s ON a.sid=s.id
+RIGHT JOIN category c  ON s.cid=c.id 
+AND a.status='1' GROUP BY `S_ID` ORDER BY `C_id`;
+
+SELECT a.id adID,a.contact contact,a.status status,a.cost cost, s.name S_Name,s.id S_ID,c.name C_Name ,c.id C_id  FROM ad a 
+LEFT JOIN sub_category s ON a.sid=s.id
+RIGHT JOIN category c  ON s.cid=c.id 
+AND a.status='1' GROUP BY `S_ID` ORDER BY `C_id`;
+
+
+-------------------------------------------------------------------------------------------------
+
+$url="http://localhost/codeigniter/index.php/Home/loginUser";
+            $data = array(
+                'email' => 'asa@hkja.com',
+                'pwd' =>'ashash', );
+
+                    <input type="file" name="text['files'][]" multiple="true" />
